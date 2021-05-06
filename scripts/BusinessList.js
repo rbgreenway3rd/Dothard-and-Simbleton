@@ -22,6 +22,8 @@ export const Businesses = () => {
             `
         businessArray.push(html)
     })
-    businessArray.join("")
+    return businessArray.join("")
+    
 }
+
 
