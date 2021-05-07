@@ -1,4 +1,4 @@
-import { Businesses } from "./BusinessList.js";
+import { Businesses } from "./BusinessGenerator.js";
 
 export const ActiveBusinesses = () => {
   return /*html*/ `

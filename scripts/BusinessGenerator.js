@@ -2,6 +2,7 @@ import {
   getBusinesses,
   getNewYorkBusinesses,
   getManufacturingBusinesses,
+  getPurchasingAgents,
 } from "./database.js";
 
 let businessArray = [];
@@ -64,7 +65,6 @@ export const ManufacturingBusinesses = () => {
       `
               <section id="manufacturing__business" >
                   <h2><u>${business.companyName}</u></h2>
-                          <br>
                       <div class="business__info">
                           ${business.addressFullStreet}
                           <br>
@@ -74,4 +74,27 @@ export const ManufacturingBusinesses = () => {
     manufacturingbusinessArray.push(html);
   });
   return manufacturingbusinessArray.join("");
+};
+
+let purchasingAgentsArray = [];
+
+export const PurchasingAgents = () => {
+  const purchasingagents = getPurchasingAgents();
+  purchasingagents.forEach((agent) => {
+    let html =
+      /*html*/
+      `
+            <section id="purchasing__agent" >
+                <h2><u>${agent.fullName}</u></h2>
+                    <div class="agent__company">
+                        ${agent.company}
+                    </div>
+                    <div class="agent_phoneNumber">
+                      ${agent.phoneNumber}
+                        
+            </section>
+            `;
+    purchasingAgentsArray.push(html);
+  });
+  return purchasingAgentsArray.join("");
 };
