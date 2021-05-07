@@ -141,6 +141,8 @@ const businesses = [
     }
   ]
 
+export const activeBusinesses = document.getElementById("active__businesses")
+
 export const getBusinesses = () => {
     return [...businesses]
 }
