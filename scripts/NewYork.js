@@ -1,4 +1,4 @@
-import { NewYorkBusinesses } from "./BusinessList.js";
+import { NewYorkBusinesses } from "./BusinessGenerator.js";
 
 export const NewYorkBusinessHTML = () => {
   return /*html*/ `

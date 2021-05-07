@@ -146,6 +146,7 @@ export const nyBusinesses = document.getElementById("newyork__businesses");
 export const manufactBusinesses = document.getElementById(
   "manufacturing__businesses"
 );
+export const purchAgent = document.getElementById("purchasing-agents");
 
 export const getBusinesses = () => {
   return [...businesses];
@@ -174,4 +175,11 @@ export const getManufacturingBusinesses = () => {
   };
   const manufacturingBusinesses = businesses.filter(manufacturingFilter);
   return manufacturingBusinesses;
+};
+
+export const getPurchasingAgents = () => {
+  const purchasingAgents = businesses.map((business) => {
+    return business.purchasingAgent;
+  });
+  return purchasingAgents;
 };

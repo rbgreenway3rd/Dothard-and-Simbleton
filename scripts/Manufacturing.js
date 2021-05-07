@@ -1,4 +1,4 @@
-import { ManufacturingBusinesses } from "./BusinessList.js";
+import { ManufacturingBusinesses } from "./BusinessGenerator.js";
 
 export const ManufacturingBusinessesHTML = () => {
   return /*html*/ `
