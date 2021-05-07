@@ -1,9 +1,10 @@
-import { DothardAndSimbleton } from "./Dothard&Simbleton.js"
-import { businessArray } from "./BusinessList.js"
-import { activeBusinesses } from "./database.js"
+import { ActiveBusinesses } from "./ActiveBusinesses.js";
+import { activeBusinesses, nyBusinesses } from "./database.js";
+import { NewYorkBusinessHTML } from "./NewYork.js";
 
-// const activeBusinesses = document.getElementById("active__businesses")
+const renderAllHTML = () => {
+  activeBusinesses.innerHTML = ActiveBusinesses();
+  nyBusinesses.innerHTML = NewYorkBusinessHTML();
+};
 
-const renderAllHTML = () => { activeBusinesses.innerHTML = DothardAndSimbleton()}
-
-renderAllHTML()
+renderAllHTML();
