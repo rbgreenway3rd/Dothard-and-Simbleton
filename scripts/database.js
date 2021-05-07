@@ -143,6 +143,9 @@ const businesses = [
 
 export const activeBusinesses = document.getElementById("active__businesses");
 export const nyBusinesses = document.getElementById("newyork__businesses");
+export const manufactBusinesses = document.getElementById(
+  "manufacturing__businesses"
+);
 
 export const getBusinesses = () => {
   return [...businesses];
@@ -159,4 +162,16 @@ export const getNewYorkBusinesses = () => {
   return newYorkBusinesses;
 };
 
-// export const getNewYorkBusinesses = () => newYorkBusinesses = businesses.filter(b => b.addressStateCode === "NY")
+//much more concise: export const getNewYorkBusinesses = () => newYorkBusinesses = businesses.filter(b => b.addressStateCode === "NY")
+//formatter wont let me use this syntax
+
+export const getManufacturingBusinesses = () => {
+  const manufacturingFilter = (businesses) => {
+    if (businesses.companyIndustry === "Manufacturing") {
+      return true;
+    }
+    return false;
+  };
+  const manufacturingBusinesses = businesses.filter(manufacturingFilter);
+  return manufacturingBusinesses;
+};

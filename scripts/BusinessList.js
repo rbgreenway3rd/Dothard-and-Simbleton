@@ -1,4 +1,8 @@
-import { getBusinesses, getNewYorkBusinesses } from "./database.js";
+import {
+  getBusinesses,
+  getNewYorkBusinesses,
+  getManufacturingBusinesses,
+} from "./database.js";
 
 let businessArray = [];
 
@@ -48,4 +52,26 @@ export const NewYorkBusinesses = () => {
     newyorkbusinessArray.push(html);
   });
   return newyorkbusinessArray.join("");
+};
+
+let manufacturingbusinessArray = [];
+
+export const ManufacturingBusinesses = () => {
+  const manufacturingbusinesses = getManufacturingBusinesses();
+  manufacturingbusinesses.forEach((business) => {
+    let html =
+      /*html*/
+      `
+              <section id="manufacturing__business" >
+                  <h2><u>${business.companyName}</u></h2>
+                          <br>
+                      <div class="business__info">
+                          ${business.addressFullStreet}
+                          <br>
+                          ${business.addressCity}, ${business.addressStateCode}. ${business.addressZipCode}
+              </section>
+              `;
+    manufacturingbusinessArray.push(html);
+  });
+  return manufacturingbusinessArray.join("");
 };
