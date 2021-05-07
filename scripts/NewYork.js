@@ -1,4 +1,3 @@
-import { getBusinesses, getNewYorkBusinesses } from "./database.js";
 import { NewYorkBusinesses } from "./BusinessList.js";
 
 export const NewYorkBusinessHTML = () => {
